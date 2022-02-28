@@ -8,7 +8,14 @@
 		<div class="flex flex-wrap m-4">
 			{#each meetups as { title, subtitle, description, imageUrl, address, email }}
 				<div class="p-4 md:w-1/3">
-					<Card {title} {subtitle} {description} {imageUrl} {address} {email} />
+					<Card
+						{title}
+						{subtitle}
+						{description}
+						{imageUrl}
+						{address}
+						{email}
+					/>
 				</div>
 			{/each}
 		</div>
