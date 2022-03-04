@@ -27,7 +27,7 @@
 	</div>
 	<div class="px-6 pt-4 pb-2 flex">
 		<Button on:click={() => dispatch('contact')}>Contact</Button>
-		<Button on:click={() => dispatch('toggleFavorite', { id })} mode="outline"
+		<Button color={isFavorite ? null : 'success'} on:click={() => dispatch('toggleFavorite', { id })} mode="outline"
 			>{isFavorite ? 'Unfavorite' : 'Favorite'}</Button
 		>
 		<Button on:click={() => dispatch('showDetails')}>Show Details</Button>
