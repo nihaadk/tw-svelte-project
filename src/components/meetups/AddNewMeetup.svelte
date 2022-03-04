@@ -73,7 +73,7 @@
 				on:input={(e) => (description = getInputElement(e).value)}
 			/>
 
-			<Button type="submit" caption="Save" />
+			<Button type="submit">Save</Button>
 		</form>
 	</div>
 </div>

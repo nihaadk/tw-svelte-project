@@ -1,16 +1,17 @@
 <script>
 	import Button from '../ui/Button.svelte';
+	import { createEventDispatcher } from 'svelte';
 
+	export let id;
 	export let title;
 	export let subtitle;
 	export let description;
 	export let imageUrl;
 	export let address;
 	export let email;
+	export let isFavorite;
 
-	function log() {
-		console.log('LOG DATA');
-	}
+	const dispatch = createEventDispatcher();
 </script>
 
 <div class="max-w-md drop-shadow-xl overflow-hidden bg-white">
@@ -25,8 +26,10 @@
 		<p class="text-gray-700 text-base  mb-2"><span class="font-bold">Address:</span> {address}</p>
 	</div>
 	<div class="px-6 pt-4 pb-2 flex">
-		<Button on:click={log} caption="Contact" />
-		<Button on:click={log} mode="outline" caption="Favorite" />
-		<Button caption="Show Details" />
+		<Button on:click={() => dispatch('contact')}>Contact</Button>
+		<Button on:click={() => dispatch('toggleFavorite', { id })} mode="outline"
+			>{isFavorite ? 'Unfavorite' : 'Favorite'}</Button
+		>
+		<Button on:click={() => dispatch('showDetails')}>Show Details</Button>
 	</div>
 </div>

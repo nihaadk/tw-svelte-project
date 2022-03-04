@@ -8,6 +8,7 @@
 	function addNewMeetup(event) {
 		const newMeetup = {
 			...event.detail,
+			isFavorite: false,
 			id: Math.random().toString()
 		};
 		meetups = [...meetups, newMeetup];
