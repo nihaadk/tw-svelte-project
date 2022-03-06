@@ -26,7 +26,7 @@
 		<p class="text-gray-700 text-base  mb-2"><span class="font-bold">Address:</span> {address}</p>
 	</div>
 	<div class="px-6 pt-4 pb-2 flex">
-		<Button on:click={() => dispatch('contact')}>Contact</Button>
+		<Button mode="outline"  on:click={() => dispatch('contact')}>Contact</Button>
 		<Button color={isFavorite ? null : 'success'} on:click={() => dispatch('toggleFavorite', { id })} mode="outline"
 			>{isFavorite ? 'Unfavorite' : 'Favorite'}</Button
 		>

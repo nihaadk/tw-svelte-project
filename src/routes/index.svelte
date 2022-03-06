@@ -1,9 +1,11 @@
 <script>
 	import AddNewMeetup from '../components/meetups/AddNewMeetup.svelte';
 	import MeetupGrid from '../components/meetups/MeetupGrid.svelte';
+	import Button from './../components/ui/Button.svelte';
 	import { initMeetups } from '../helper/mockData';
 
 	let meetups = initMeetups;
+	let editMode;
 
 	function addNewMeetup(event) {
 		const newMeetup = {
@@ -12,9 +14,16 @@
 			id: Math.random().toString()
 		};
 		meetups = [...meetups, newMeetup];
+		editMode = null;
 	}
 </script>
 
-<AddNewMeetup on:addNewEvent={addNewMeetup} />
+{#if !editMode}
+	<Button on:click={() => (editMode = 'add')}>Add New Meetups</Button>
+{/if}
 
-<MeetupGrid {meetups} />
+{#if editMode === 'add'}
+	<AddNewMeetup on:addNewEvent={addNewMeetup} />
+{:else}
+	<MeetupGrid {meetups} />
+{/if}
