@@ -2,6 +2,7 @@
 	import AddNewMeetup from '../components/meetups/AddNewMeetup.svelte';
 	import MeetupGrid from '../components/meetups/MeetupGrid.svelte';
 	import Button from './../components/ui/Button.svelte';
+	import Modal from './../components/ui/Modal.svelte';
 	import { initMeetups } from '../helper/mockData';
 
 	let meetups = initMeetups;
@@ -23,7 +24,10 @@
 {/if}
 
 {#if editMode === 'add'}
-	<AddNewMeetup on:addNewEvent={addNewMeetup} />
-{:else}
-	<MeetupGrid {meetups} />
+	<Modal>
+		<AddNewMeetup on:addNewEvent={addNewMeetup} />
+	</Modal>
+	
 {/if}
+
+<MeetupGrid {meetups} />

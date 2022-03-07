@@ -14,7 +14,7 @@
 	const dispatch = createEventDispatcher();
 </script>
 
-<div class="max-w-md drop-shadow-xl overflow-hidden bg-white">
+<div class="max-w-md drop-shadow-xl bg-white">
 	<img class="w-full max-h-min" src={imageUrl} alt="cardImage" />
 	<div class="px-6 py-4">
 		<h1 class="text-2xl font-bold mb-2 text-red-500">{title}</h1>

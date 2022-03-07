@@ -7,7 +7,7 @@
 </script>
 
 <div class="relative mb-4">
-	<label for={id}>{label}</label>
+	<label class="flex justify-start" for={id}>{label}</label>
 	{#if controlTyp === 'textarea'}
 		<textarea type="text" rows="3" {value} on:input />
 	{:else}
